@@ -1,0 +1,139 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="tittle">Guess the secret numbers of the wizard!</div>
+    <div class="image"><img style="margin-left: 50px;" src="magic.gif">    </div>
+    <div Class="frame">
+        <button type="button" id="start"> start</button>
+        <button type="button" id="reset" onclick="resetgame()"> reset</button>
+        <br>
+        <div id="game"></div>
+        <div style="text-align: left;">
+            <div id="gameArea"></div>
+            <div id="score"> your score:
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="frameGame">
+        <p style="font-size:20px; ">Information about the game </p>
+        <p>Choose numbers between 0-9</p>
+        <p>If the number is correct, the background color will be
+            <spna style="background-color: green ;width: 55px;">green</spna>
+        </p>
+        <p>If the number is incorrect, the background color will be
+            <spna style="background-color: red ;width: 55px;">red</spna>
+        </p>
+        <p> If the number is greater than the correct number , the background
+            color will be red and the font color will be <span style="color:blue">blue</span></p>
+        <p> If the number is less than the correct number , the background
+            color will be red and the font color will be <span style="color:plum">plum</span></p>
+    </div>
+
+
+    <script>
+        const start = document.getElementById("start");
+        var gamearea = document.getElementById("game");
+        var gameplay = false;
+        var numberTry = 0;
+        var scores = 0;
+        start.addEventListener("click", guss);
+        maker();
+
+
+        function guss() {
+            if (!gameplay) {
+                gameplay = true;
+                document.getElementById("game").innerHTML = "  ";
+                numberTry = 0;
+                maker();
+                start.innerHTML = "play";
+
+            }
+            else {
+                console.log("-----------------------")
+                const numbers = document.querySelectorAll(".number")
+                numberTry++;
+                document.getElementById("gameArea").innerHTML = "number of times:" + numberTry;
+                let win = 0;
+                for (let i = 0; i < numbers.length; i++) {
+                    const element = numbers[i].value;
+                    const cor = numbers[i].corect
+                    console.log(cor);
+                    if (element == cor) {
+                        numbers[i].style.backgroundColor = "green";
+                        numbers[i].style.color = "white";
+                        win++;
+
+                    }
+                    else {
+                        if (element < cor) {
+                            numbers[i].style.backgroundColor = "red";
+                            numbers[i].style.color = "plum";
+                        }
+                        else {
+                            numbers[i].style.backgroundColor = "red";
+                            numbers[i].style.color = "blue";
+                        }
+
+                    }
+                    if (win == numbers.length) {
+                        scores = scores + 5;
+                        document.getElementById("gameArea").innerHTML = "You succeeded " + numberTry + " times"
+                        endgame();
+
+                    }
+                }
+            }
+        }
+        function endgame() {
+            gameplay = false;
+            scor();
+
+        }
+        function resetgame() {
+            gameplay = false;
+            document.getElementById("game").innerHTML = "  ";
+            guss();
+            document.getElementById("gameArea").innerHTML = "number of times:" + numberTry;
+
+        }
+
+        function scor() {
+            document.getElementById("score").innerHTML = "your score:" + scores;
+        }
+
+        function maker() {
+            for (let i = 0; i < 5; i++) {
+                const inputt = document.createElement("input");
+                inputt.setAttribute("type", "number");
+                inputt.style.margin = "15px"
+                inputt.style.padding = "5px"
+                inputt.max = 9;
+                inputt.min = 0;
+                inputt.classList = "number"
+                inputt.corect = Math.floor(Math.random() * 10);
+                inputt.style.width = "50px";
+                inputt.value = "";
+                inputt.style.fontSize = "20px"
+                gamearea.appendChild(inputt);
+
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

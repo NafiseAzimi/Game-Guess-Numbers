@@ -1,0 +1,79 @@
+.frame{
+    border-width:1px;
+    border-style: solid;
+    border-color: black;
+    margin: 10px;
+    margin-left: 350px;
+    padding:10px;
+     width: 550px;
+     height: 180px;
+     border-radius: 10px;
+     background-color: hsl(195, 72%, 90%);
+     text-align: center;
+}
+
+.frameGame{
+    border-width:1px;
+    border-style: solid;
+    border-color: black;
+    margin: 10px;
+    padding:10px;
+     width: 550px;
+     height: 300px;
+     border-radius: 10px;
+     background-color: hsl(195, 72%, 90%);
+     margin-left: 350px;
+}
+
+button{
+    width: 70px;
+    font-size: 20px;
+    margin: 10px;
+    padding: 5px;
+}
+.image{
+    width: 250px;
+    float: left;
+    margin-top: 120px;
+}
+.tittle{
+    font-size: 25px;
+    text-align: center;
+    background-color:lightpink;
+    margin: 5px;
+    padding: 10px;
+    width: 550px;
+    border-radius: 10px;
+    margin-left: 350px;
+}
+.StartGame{
+    background-color: rgb(23, 5, 53);
+    width: 500px;
+    height: 500px;
+    margin-left: 350px;
+    margin-top: 70px;
+}
+.buttonload {
+    background-color: #04AA6D; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 24px; /* Some padding */
+    font-size: 16px; /* Set a font-size */
+    width:170px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 180px;
+  }
+  
+  .fa {
+    margin-left: -12px;
+    margin-right: 8px;
+  }
+  .imageGuess{
+      width: 75%;
+      margin-left: 60px;
+      margin-top: 55px;
+      border-radius: 40%;
+  }
+
+ 

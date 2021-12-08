@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="StartGame"> 
+    <img src="start.jpg" class="imageGuess">
+<button class="buttonload" id="buttonload" type="button" >
+  <i class="fa fa-spinner fa-spin"></i>Loading
+</button>
+
+</div>
+<a href="guess.html" id="links"></a>
+<script>
+var Loadin=document.getElementById("buttonload");
+setInterval(load ,3000);
+
+
+function load(){
+Loadin.innerHTML="Start 1 Level";
+addEventListener("click",function(){
+    document.getElementById('links').click();
+
+})
+}
+</script>
+
+</body>
+</html>
